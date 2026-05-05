@@ -1,0 +1,18 @@
+PROCEDURE DistinctSum(set1[1..n], set2[1..m]) → sum
+  sum ← 0
+
+  // Elements in set1 NOT in set2
+  FOR i ← 1 TO n DO
+    found ← false
+    FOR j ← 1 TO m DO
+      IF set1[i] = set2[j] THEN found ← true
+    IF NOT found THEN sum ← sum + set1[i]
+
+  // Elements in set2 NOT in set1
+  FOR j ← 1 TO m DO
+    found ← false
+    FOR i ← 1 TO n DO
+      IF set2[j] = set1[i] THEN found ← true
+    IF NOT found THEN sum ← sum + set2[j]
+
+  RETURN sum

@@ -1,0 +1,6 @@
+PROCEDURE dot_product(v1[1..n], v2[1..n], VAR ps: REAL)
+  // ps passed by reference — result written directly
+  ps ← 0
+  FOR i ← 1 TO n DO
+    ps ← ps + v1[i] * v2[i]
+  // No RETURN — ps is modified in caller's scope
